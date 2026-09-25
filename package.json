@@ -3,7 +3,10 @@
     "version": "0.0.0",
     "descripotion":"sistema de gestão de contas a receber.",
     "author": "Marcos",
-    "type":"module"
+    "type":"module",
+    "scripts":{
+        "dev": "node --watch ./server.ts"
+    }
 
 
 }
