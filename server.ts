@@ -1,13 +1,23 @@
-import {createServer} from 'node:http'; // cria servidor
+
+import express from 'express';
 import send from './send.ts';
 
-createServer(function (request, response){
+const app = express();
 
-//console.log('toc toc ');
-if(request.url !== '/api/health'){
-    send(response, 404, {message: 'recurso não encontrado'})
-}
-send(response, 200, {status: 'ok'})
+app.use(function(request, response, next){
+    console.log(request.method + '-' + request.url);
+    next();
 
+});
 
-}).listen(3000);
+app.get('/api/health', function (request,response){
+    //send(response, 200, {'status':'ok'});
+    response.status(200).json({status:'ok'});
+});
+// middler - função intermediária
+app.use(function (request, response){
+    //send(response,404, {message: 'recurso não encontrado.'});
+    response.status(404).json({message: 'Recurso não encontrado.'})
+});
+
+app.listen(3000);
