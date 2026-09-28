@@ -1,13 +1,13 @@
 import {createServer} from 'node:http'; // cria servidor
+import send from './send.ts';
+
 createServer(function (request, response){
 
-//console.log("toc toc ");
-if(request.url !== "/api/health"){
-    response.writeHead(404, { "content-type":"application/json"});
-    response.end(JSON.stringify({message: "Recurso não encontrado"}));
-    return;
+//console.log('toc toc ');
+if(request.url !== '/api/health'){
+    send(response, 404, {message: 'recurso não encontrado'})
 }
-response.writeHead(200, { "content-type":"application/json"});
-response.end(JSON.stringify({status: "ok"}));
+send(response, 200, {status: 'ok'})
+
 
 }).listen(3000);
