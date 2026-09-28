@@ -1,5 +1,5 @@
 import {createServer} from 'node:http'; // cria servidor
-createServer(function (request:any, response){
+createServer(function (request, response){
 
 //console.log("toc toc ");
 if(request.url !== "/api/health"){
