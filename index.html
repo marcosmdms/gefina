@@ -84,6 +84,20 @@
 
     const tableBody = document.querySelector("tbody");
 
+    function statusLabel(status) {
+      if (status != "paid") return "Pendente";
+      return "Pago";
+    }
+
+    function addCell(row, value) {
+      const cell = document.createElement("td");
+
+      cell.textContent = value;
+      cell.className = "px-6 py-4";
+
+      row.appendChild(cell);
+    }
+
     for (let i = 0; i < invoices.length; i++) {
 
       const invoice = invoices[i];
@@ -91,43 +105,12 @@
 
       row.className = "border-b hover:bg-gray-100";
 
-      const id = document.createElement("td");
-      id.textContent = invoice.id;
-      id.className = "px-6 py-4 font-medium";
-      row.appendChild(id);
-
-      const client = document.createElement("td");
-      client.textContent = invoice.customer.name;
-      client.className = "px-6 py-4 font-medium";
-      row.appendChild(client);
-
-      const amount = document.createElement("td");
-      amount.textContent = `R$ ${invoice.amount}`;
-      amount.className = "px-6 py-4";
-      row.appendChild(amount);
-
-      const issueDate = document.createElement("td");
-      issueDate.textContent = invoice.issueDate;
-      issueDate.className = "px-6 py-4";
-      row.appendChild(issueDate);
-
-      const dueDate = document.createElement("td");
-      dueDate.textContent = invoice.dueDate;
-      dueDate.className = "px-6 py-4";
-      row.appendChild(dueDate);
-
-      const status = document.createElement("td");
-      status.className = "px-6 py-4 font-bold";
-
-      if (invoice.status === "paid") {
-        status.textContent = "Pago";
-        status.classList.add("text-green-600");
-      } else {
-        status.textContent = "Pendente";
-        status.classList.add("text-red-600");
-      }
-
-      row.appendChild(status);
+      addCell(row, invoice.id);
+      addCell(row, invoice.customer.name);
+      addCell(row, `R$ ${invoice.amount}`);
+      addCell(row, invoice.issueDate);
+      addCell(row, invoice.dueDate);
+      addCell(row, statusLabel(invoice.status));
 
       tableBody.appendChild(row);
     }
@@ -136,4 +119,3 @@
 </body>
 
 </html>
-
