@@ -1,20 +1,22 @@
 {
-    "name": "gefina",
-    "version": "0.0.0",
-    "descripotion": "sistema de gestão de contas a receber.",
-    "author": "Marcos",
-    "type": "module",
-    "scripts": {
-        "check": "tsc --noEmit && npx @biomejs/biome check ./",
-        "dev": "node --watch ./server.ts"
-    },
-    "devDependencies": {
-        "@biomejs/biome": "2.5.14",
-        "@types/node": "^26.6.3",
-        "typescript": "^7.0.2"
-    },
-    "dependencies": {
-        "@types/express": "^5.0.6",
-        "express": "^5.2.1"
-    }
+  "name": "gefina",
+  "version": "0.0.0",
+  "descripotion": "sistema de gestão de contas a receber.",
+  "author": "Marcos",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit && npx @biomejs/biome check ./",
+    "fix": "biome check --write ./",
+    "fix:unsafe": "biome check --write --unsafe ./",
+    "dev": "node --watch ./server.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
+  }
 }
