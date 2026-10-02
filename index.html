@@ -55,9 +55,9 @@
     ];
 
 
-            const root = document.querySelector('div');
+            const root = document.querySelector('div'); // pega tag div e chamam de root - vira raiz
             
-            function statusLabel(status) {
+            function statusLabel(status) {// transforma status
                 return status === 'paid' ? 'Pago' : 'Pendente';
             }
 
@@ -100,6 +100,10 @@
                 );
             }
 
+            function app (){
+              return <InvoiceTable invoices={invoices}/>
+            }
+            
             ReactDOM.createRoot(root).render(<InvoiceTable invoices={invoices} />);
 
   </script>
