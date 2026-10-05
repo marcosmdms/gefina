@@ -1,3 +1,5 @@
+import InvoiceTable from "./InvoiceTable.tsx";
+import { Invoice } from "./invoiceType.ts";
 
 const invoices: Invoice[] = [
   {
@@ -38,4 +40,6 @@ const invoices: Invoice[] = [
   },
 ];
 
-export default invoices;
+export default function App(){
+    return <InvoiceTable invoices={invoices}/>
+}
