@@ -9,14 +9,15 @@ interface InvoiceTableProps{
 export default function (props: InvoiceTableProps){
     const invoices = props.invoices;
 
-    return <table>
+    return <div className="max-w-4xl mx-auto overflow-x-auto bg-white rounded-lg shadow">
+    <table className="w-full text-left">
         <thead>
-            <tr>
-                <td>Cliente</td>
-                <td>Valor</td>
-                <td>Data de Emissão</td>
-                <td>Dta de Vencimento</td>
-                <td>Situação</td>
+            <tr className="bg-gray-800 text-white divide-x divide-gray-700">
+                <td className="px-6 py-3">Cliente</td>
+                <td className="px-6 py-3">Valor</td>
+                <td className="px-6 py-3">Data de Emissão</td>
+                <td className="px-6 py-3">Dta de Vencimento</td>
+                <td className="px-6 py-3">Situação</td>
             </tr>
         </thead>
         <tbody>
@@ -27,5 +28,5 @@ export default function (props: InvoiceTableProps){
 
     </table>
 
-
+</div>
 }
