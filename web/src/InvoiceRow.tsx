@@ -1,5 +1,7 @@
 import { Invoice } from "./invoiceType.ts"
 import statusLabel from "./statusLabel.ts";
+import statusColor from "./style.ts";
+import { styleTd } from "./style.ts";
 
 interface InvoiceRowProps {
     invoice:Invoice;
@@ -13,22 +15,11 @@ function formatCurrency(value: number) {
 }
 
 
-function formatDate(value: string) {
+function formatDate(value: string) { // tranforma data
     return new Intl.DateTimeFormat("pt-BR").format( new Date(value + "T00:00:00") ); 
 }
 
-function statusColor(value: string) {
-    if (value === "paid"){
-        return "px-6 py-4 border-r border-b border-gray-200 text-green-700";
-    } else {
 
-        return "px-6 py-4 border-r border-b border-gray-200 text-red-700";
-    }
-}
-
-
-
-const styleTd = "px-6 py-4 border-r border-b border-gray-200";
 
 export default function InvoiceRow(props: InvoiceRowProps) {
 

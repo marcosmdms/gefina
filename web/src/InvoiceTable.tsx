@@ -13,11 +13,11 @@ export default function (props: InvoiceTableProps){
     <table className="w-full text-left">
         <thead>
             <tr className="bg-gray-800 text-white divide-x divide-gray-700">
-                <td className="px-6 py-3">Cliente</td>
-                <td className="px-6 py-3">Valor</td>
-                <td className="px-6 py-3">Data de Emissão</td>
-                <td className="px-6 py-3">Dta de Vencimento</td>
-                <td className="px-6 py-3">Situação</td>
+                <th className="px-6 py-3">Cliente</th>
+                <th className="px-6 py-3">Valor</th>
+                <th className="px-6 py-3">Data de Emissão</th>
+                <th className="px-6 py-3">Data de Vencimento</th>
+                <th className="px-6 py-3">Situação</th>
             </tr>
         </thead>
         <tbody>
