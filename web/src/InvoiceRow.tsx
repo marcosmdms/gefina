@@ -19,14 +19,14 @@ function formatDate(value: string) { // tranforma data
     return new Intl.DateTimeFormat("pt-BR").format( new Date(value + "T00:00:00") ); 
 }
 
-
+const tdAmount = "px-6 py-4 text-right"
 
 export default function InvoiceRow(props: InvoiceRowProps) {
 
     const invoice = props.invoice;
     return <tr>
         <td className={styleTd}>{invoice.customer.name}</td>
-        <td className={styleTd}>{formatCurrency(invoice.amount)}</td>
+        <td className={tdAmount}>{formatCurrency(invoice.amount)}</td>
         <td className={styleTd}>{formatDate(invoice.issueDate)}</td>   
         <td className={styleTd}>{formatDate(invoice.dueDate)}</td>
         <td className={statusColor(invoice.status)}>{statusLabel(invoice.status)}</td>
