@@ -30,4 +30,5 @@ CREATE TABLE invoices (
   issue_date DATE NOT NULL,
   due_date DATE NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
+  
 );
