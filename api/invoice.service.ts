@@ -46,7 +46,7 @@ function toInvoice(row: InvoiceRow): Invoice {
   };
 }
 
-const baseQuery = 'SELECT invoices.id, invoices.amount, invoices.status, invoices.issue_date AS "issueDate", invoices.due_date AS "dueDate", invoices.customer_id, customers.name AS customer_name, customers.email AS customer_email FROM invoices INNER JOIN customers ON invoices.customer_id = customers.id';
+const baseQuery = 'SELECT invoices.id, invoices.amount, invoices.status, invoices.issue_date::text AS "issueDate", invoices.due_date::text AS "dueDate", invoices.customer_id, customers.name AS customer_name, customers.email AS customer_email FROM invoices INNER JOIN customers ON invoices.customer_id = customers.id';
 
 export async function findAllInvoices(): Promise<Invoice[]> {
   const connect = await pool.query<InvoiceRow>(`${baseQuery} ORDER BY invoices.issue_date DESC;`);
