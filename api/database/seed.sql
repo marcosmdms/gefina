@@ -3,7 +3,7 @@
 -- Dados fictícios para o ambiente de desenvolvimento.
 -- Pode ser executado mais de uma vez: esvazia as tabelas antes de inserir.
 
-TRUNCATE users, sessions, customers, invoices RESTART IDENTITY;
+TRUNCATE users, session, customers, invoices RESTART IDENTITY;
 
 INSERT INTO users (name, email, password_hash, role) VALUES
   ('Usuário Administrador', 'admin@gefina.com.br', 'placeholder', 'admin'),
