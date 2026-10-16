@@ -1,4 +1,5 @@
-export type InvoiceStatus = "pending" | "paid";
+export type InvoiceStatus = "pending" | "paid" ;
+export type InvoiceSituation = "pending" | "paid" | "overdue" ;
 
 
 interface Customer {
@@ -11,6 +12,7 @@ export interface Invoice {
   id: number;
   amount: number;
   status: InvoiceStatus;
+  situation: InvoiceSituation,
   issueDate: string;
   dueDate: string;
   customer: Customer;
