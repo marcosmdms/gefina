@@ -10,11 +10,11 @@ export default function (props: InvoiceTableProps) {
     const invoices = props.invoices;
 
     return <div overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200>
-        <h1 class="text-2xl font-bold text-gray-900">
+        <h1 className="text-2xl font-bold text-gray-900">
             Faturas
         </h1>
 
-        <p class="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-gray-500">
             Acompanhe suas faturas e pagamentos
         </p><br/>
         <table className="w-full text-left">
