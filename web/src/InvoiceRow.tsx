@@ -1,5 +1,5 @@
 import { Invoice } from "./invoiceType.ts"
-import statusLabel from "./statusLabel.ts";
+import {situationLabel, formatCurrency, formatDate} from "./utils.ts";
 import statusColor from "./style.ts";
 import { styleTd } from "./style.ts";
 
@@ -26,10 +26,10 @@ export default function InvoiceRow(props: InvoiceRowProps) {
     const invoice = props.invoice;
     return <tr>
         <td className={styleTd}>{invoice.customer.name}</td>
-        <td className={tdAmount}>{invoice.amount}</td>
-        <td className={styleTd}>{invoice.issueDate}</td>   
-        <td className={styleTd}>{invoice.dueDate}</td>
-        <td className={statusColor(invoice.status)}>{statusLabel(invoice.status)}</td>
+        <td className={tdAmount}>{formatCurrency(invoice.amount)}</td>
+        <td className={styleTd}>{formatDate(invoice.issueDate)}</td>   
+        <td className={styleTd}>{formatDate(invoice.dueDate)}</td>
+        <td className={statusColor(invoice.status)}>{situationLabel(invoice.situation)}</td>
     </tr>
 
 }
