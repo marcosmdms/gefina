@@ -1,4 +1,3 @@
-import { promises } from "node:dns";
 import pool from "./database.ts";
 
 type InvoiceStatus = "pending" | "paid";
@@ -62,12 +61,12 @@ SELECT
     END AS situation,
     invoices.issue_date::text AS "issueDate",
     invoices.due_date::text AS "dueDate",
-    invoices.customer_id,
+    customer_id AS customer_id,
     customers.name AS customer_name,
     customers.email AS customer_email
 FROM invoices
 INNER JOIN customers
-    ON invoices.customer_id = customers.id;
+    ON invoices.customer_id = customers.id
 `;
 
 export async function findAllInvoices(): Promise<Invoice[]> {
