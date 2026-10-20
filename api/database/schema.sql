@@ -6,7 +6,8 @@ CREATE TABLE users (
     role TEXT NOT NULL DEFAULT 'user',
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
-CREATE TABLE session (
+
+CREATE TABLE sessions (
     id TEXT PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     expires_at TIMESTAMP NOT NULL,
@@ -30,5 +31,4 @@ CREATE TABLE invoices (
   issue_date DATE NOT NULL,
   due_date DATE NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
-  
 );
