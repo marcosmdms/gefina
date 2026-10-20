@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import InvoiceTable from "./InvoiceTable.tsx";
 import { Invoice } from "./invoiceType.ts";
 
+import Dashboard from "./dashboardPage.tsx";
+
+export default function App() {
+  return <Dashboard/>;
+}
+
 // const invoices: Invoice[] = [
 //   {
 //     id: 1,
