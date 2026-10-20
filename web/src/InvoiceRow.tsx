@@ -1,35 +1,22 @@
-import { Invoice } from "./invoiceType.ts"
-import {situationLabel, formatCurrency, formatDate} from "./utils.ts";
-import statusColor from "./style.ts";
-import { styleTd } from "./style.ts";
+import { Invoice } from './invoiceType.ts';
+import {
+    situationLabel,
+    formatCurrency,
+    formatDate
+} from './utils.ts';
 
 interface InvoiceRowProps {
-    invoice:Invoice;
+    invoice: Invoice;
 }
 
-// function formatCurrency(value: number) {
-//   return new Intl.NumberFormat("pt-BR", {
-//     style: "currency",
-//     currency: "BRL",
-//   }).format(value);
-// }
-
-
-// function formatDate(value: string) { // tranforma data
-//     return new Intl.DateTimeFormat("pt-BR").format( new Date(value + "T00:00:00") ); 
-// }
-
-const tdAmount = "px-6 py-4 text-right"
-
 export default function InvoiceRow(props: InvoiceRowProps) {
-
     const invoice = props.invoice;
-    return <tr>
-        <td className={styleTd}>{invoice.customer.name}</td>
-        <td className={tdAmount}>{formatCurrency(invoice.amount)}</td>
-        <td className={styleTd}>{formatDate(invoice.issueDate)}</td>   
-        <td className={styleTd}>{formatDate(invoice.dueDate)}</td>
-        <td className={statusColor(invoice.status)}>{situationLabel(invoice.situation)}</td>
-    </tr>
 
+    return <tr>
+        <td>{invoice.customer.name}</td>
+        <td>{formatCurrency(invoice.amount)}</td>
+        <td>{formatDate(invoice.issueDate)}</td>
+        <td>{formatDate(invoice.dueDate)}</td>
+        <td>{situationLabel(invoice.situation)}</td>
+    </tr>
 }

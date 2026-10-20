@@ -1,6 +1,6 @@
 # Gefina
 
-Sistema de **gestão de contas a receber**.
+Sistema de gestão de contas a receber.
 
 O Gefina registra os clientes de uma organização e as faturas emitidas contra esses clientes, e apresenta a visão consolidada da situação financeira que desses registros decorre.
 
@@ -19,4 +19,6 @@ O Gefina registra os clientes de uma organização e as faturas emitidas contra 
 - Envio de arquivo de imagem
 - Representação gráfica de séries temporais
 
-Acesse: https://gefina-xemy.onrender.com
+---
+
+Acesse: https://gefina-r64f.onrender.com

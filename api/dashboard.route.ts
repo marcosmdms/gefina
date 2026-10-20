@@ -1,10 +1,10 @@
-import { response, Router } from "express";
+import { Router } from 'express';
 
-import findDashboard from "./dashboard.service.ts";
+import findDashboard from './dashboard.service.ts';
 
-const router = Router(); 
+const router = Router();
 
-router.get("/", async (_request, response) => {
+router.get('/', async (_request, response) => {
     try {
         const dashboard = await findDashboard();
 
@@ -12,7 +12,7 @@ router.get("/", async (_request, response) => {
     } catch (error) {
         console.error(error);
 
-        response.status(500).json({ error: { message: "Não foi possível carregar o painel incial." }});
+        response.status(500).json({ error: { message: 'Não foi possível carregar o painel inicial.' } });
     }
 });
 
