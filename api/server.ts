@@ -38,15 +38,6 @@ app.use('/api/invoices', invoices);
 
 app.use(express.static(dist));
 
-app.use((request, response, next) => {
-  if (request.url.startsWith('/api') || request.method !== 'GET') {
-    next();
-    return;
-  }
-
-  response.sendFile(join(dist, 'index.html'));
-});
-
 app.use((_request, response) => {
   response.status(404).json({ message: 'Recurso não encontrado.' });
 });
